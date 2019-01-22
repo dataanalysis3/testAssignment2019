@@ -8,7 +8,7 @@ After this you want to login on Bart as usual and submit a Word document that on
 
 Please see this video to make sure you understand the process: https://www.youtube.com/watch?v=rTsfBAV7sOo (the video does not explain how to submit on Bart, but I expect you to know this).
 
-The deadline for this test assignment is Tuesday 29 January at 5pm. Please do not commit after the deadline. You will be able to do this, but I will not check any commits made after 5pm (each commit on Github has a timestamp). So if you made a commit at 4.30pm, then you realised that you made a mistake and corrected it in a separate commit at 5.02pm I will see your repository as per 4.30pm commit.
+The deadline for this test assignment is Tuesday 29 January at 2pm. Please do not commit after the deadline. You will be able to do this, but I will not check any commits made after 5pm (each commit on Github has a timestamp). So if you made a commit at 1.30pm, then you realised that you made a mistake and corrected it in a separate commit at 2.02pm I will see your repository as per 1.30pm commit.
 
 If you have any questions about this assignment the best way to ask them is by raising an issue on Github in the main assignment repository (here -- https://github.com/dataanalysis3/testAssignment2019/issues, and then click on "New issue"). You may want to tag me (@abessudnov) when raising your issue to make sure that I receive a notification about it. Before raising your issue please check that it hasn't been addressed already.
 
