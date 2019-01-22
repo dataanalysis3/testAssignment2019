@@ -1,6 +1,6 @@
 ---
 title: "Test statistical assignment"
-author: "Alexey Bessudnov"
+author: "Alexey Bessudnov (add your student number here in the parentheses)"
 date: "21 January 2019"
 output: github_document
 ---
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-Please change the author and date fields above as appropriate. Do not change the output format. Once you have completed the assignment you want to knit your document into a markdown document in the "github_document" format and then commit both the .Rmd and .md files (and all the associated files with graphs) to your private assignment repository on Github.
+Please change the author and date fields above as appropriate. Do not fotget to add your student number. Do not change the output format. Once you have completed the assignment you want to knit your document into a markdown document in the "github_document" format and then commit both the .Rmd and .md files (and all the associated files with graphs) to your private assignment repository on Github.
 
 ## Reading data (40 points)
 
