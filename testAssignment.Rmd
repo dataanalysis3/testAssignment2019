@@ -40,7 +40,7 @@ Tabulate three variables: children's gender, age (please use derived variables) 
 ```{r}
 # add your code here
 
-table(...)
+# table(...)
 
 ```
 
