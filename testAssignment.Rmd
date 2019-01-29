@@ -26,7 +26,8 @@ First, we need to read the data into R. For this assignment, I ask you to use da
 library(tidyverse)
 # This attaches the tidyverse package. If you get an error here you need to install the package first. 
 
-Data <- read_tsv("")
+h_youth <- read_tsv("C:/Users/ab789/datan3_2019/data/UKDA-6614-tab/tab/ukhls_w8/h_youth.tab")
+
 # You need to add between the quotation marks a full path to the required file on your computer.
 
 ```
@@ -40,7 +41,9 @@ Tabulate three variables: children's gender, age (please use derived variables) 
 ```{r}
 # add your code here
 
-# table(...)
+table(h_youth$h_sex_dv)
+table(h_youth$h_age_dv)
+table(h_youth$h_ypsocweb)
 
 ```
 
@@ -49,7 +52,12 @@ Tabulate three variables: children's gender, age (please use derived variables) 
 We want to create a new binary variable for having an account on social media so that 1 means "yes", 0 means "no", and all missing values are coded as NA. We also want to recode gender into a new variable with the values "male" and "female" (this can be a character vector or a factor).
 
 ```{r}
-# add your code here
+
+h_youth2 <- h_youth %>%
+        mutate(socmedia = recode(h_ypsocweb,
+                                 `1` = 1L, `2` = 0L, `-9` = NA_integer_)) %>%
+        mutate(gender = recode(h_sex_dv, `1` = "male", `2` = "female"))
+
 ```
 
 ## Calculate means (10 points)
@@ -57,19 +65,31 @@ We want to create a new binary variable for having an account on social media so
 Produce code that calculates probabilities of having an account on social media (i.e. the mean of your new binary variable produced in the previous problem) by age and gender (please filter out children who are aged 16). 
 
 ```{r}
-# add your code here
+
+summary <- h_youth2 %>%
+        filter(h_age_dv < 16) %>%
+        group_by(h_age_dv, gender) %>%
+        summarise(
+                meanSocMedia = mean(socmedia, na.rm = TRUE)
+        )
+summary
+
 ```
 
 ## Write short interpretation (10 points)
 
-Write two or three sentences interpreting your findings above.
+Probability of having an account on social media increses with age. At each age, girls are more likely to have an account than boys.
 
 ## Visualise results (20 points)
 
 Create a statistical graph (only one, but it can be faceted) illustrating your results (i.e. showing how the probability of having an account on social media changes with age and gender). Which type of statistical graph would be most appropriate for this?
 
 ```{r}
-# add your code here
+summary %>%
+        ggplot(aes(x = h_age_dv, y = meanSocMedia, colour = gender)) +
+        geom_line() +
+        xlab("Age") +
+        ylab("proportion with an account on soc media")
 ```
 
 ## Conclusion
